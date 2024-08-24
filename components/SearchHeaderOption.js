@@ -1,6 +1,6 @@
-import React from "react";
 import { useRouter } from "next/router";
-export default function SearchHeaderOptions({ title, Icon, selected }) {
+
+export default function SearchHeaderOption({ title, Icon, selected }) {
   const router = useRouter();
   function selectTab(title) {
     router.push(
@@ -11,7 +11,7 @@ export default function SearchHeaderOptions({ title, Icon, selected }) {
   }
   return (
     <div
-      onClick={() => selectTab(title)}
+      onClick={()=>selectTab(title)}
       className={`flex items-center space-x-1 border-b-4 border-transparent hover:text-blue-500 cursor-pointer hover:border-blue-500 pb-3 ${
         selected && "text-blue-500 border-blue-500"
       }`}

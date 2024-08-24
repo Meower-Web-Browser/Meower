@@ -1,9 +1,7 @@
 import React from "react";
-import Image from "next/image";
 import PaginationButtons from "./PaginationButtons";
 
 export default function ImageResults({ results }) {
-  console.log("ImageResults Components ", results);
   return (
     <div className="mt-4">
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 px-3 space-x-4">
@@ -11,22 +9,16 @@ export default function ImageResults({ results }) {
           <div key={result.link} className="mb-8">
             <div className="group">
               <a href={result.image.contextLink}>
-                <Image
+                <img
                   className="group-hover:shadow-xl w-full h-60 object-contain"
                   src={result.link}
                   alt={result.title}
                 />
               </a>
-              <a
-                className="group-hover:underline"
-                href={result.image.contextLink}
-              >
+              <a className="group-hover:underline" href={result.image.contextLink}>
                 <h2 className="truncate text-xl">{result.title}</h2>
               </a>
-              <a
-                className="group-hover:underline"
-                href={result.image.contextLink}
-              >
+              <a className="group-hover:underline" href={result.image.contextLink}>
                 <p className="text-gray-600">{result.displayLink}</p>
               </a>
             </div>
@@ -34,7 +26,7 @@ export default function ImageResults({ results }) {
         ))}
       </div>
       <div className="ml-16">
-        <PaginationButtons />
+          <PaginationButtons/>
       </div>
     </div>
   );
